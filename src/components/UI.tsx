@@ -1,0 +1,11 @@
+import { useEffect, useRef, type ReactNode } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { ArrowUpRight, MessageCircle, X } from 'lucide-react';
+import { whatsappUrl } from '../config/contact';
+export function Reveal({children,className=''}:{children:ReactNode;className?:string}) { const reduced=useReducedMotion(); return <motion.div className={className} initial={reduced?false:{opacity:0,y:22}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.08}} transition={{duration:0.5}}>{children}</motion.div>; }
+export function QuoteButton({children='Cotizar',message,className='button primary'}:{children?:ReactNode;message?:string;className?:string}) { const url=whatsappUrl(message);return <a className={className} href={url??'#contacto'} {...(url?{target:'_blank',rel:'noopener noreferrer'}:{})}>{children}<ArrowUpRight size={17}/></a>; }
+export function SectionTitle({eyebrow,title,text}:{eyebrow:string;title:string;text?:string}) {return <div className="section-title"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{text&&<p>{text}</p>}</div>;}
+export function Modal({title,children,onClose}:{title:string;children:ReactNode;onClose:()=>void}) {const ref=useRef<HTMLDialogElement>(null);useEffect(()=>{const openedAt=window.location.hash;const closeOnNavigation=()=>{if(window.location.hash!==openedAt)onClose();};window.addEventListener("hashchange",closeOnNavigation);return()=>window.removeEventListener("hashchange",closeOnNavigation);},[onClose]);useEffect(()=>{const previous=document.activeElement as HTMLElement;ref.current?.showModal();const overflow=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.body.style.overflow=overflow;previous?.focus();};},[]);return <dialog ref={ref} onCancel={onClose} onClick={e=>{if(e.target===e.currentTarget)onClose();}} aria-labelledby="modal-title"><div className="modal-content"><button className="icon-button close" aria-label="Cerrar detalles" onClick={onClose} autoFocus><X/></button><h2 id="modal-title">{title}</h2>{children}</div></dialog>;}
+export function WhatsAppButton(){return <QuoteButton className="whatsapp-float"><MessageCircle size={23}/><span>Hablemos</span></QuoteButton>;}
+
+

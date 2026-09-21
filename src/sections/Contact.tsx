@@ -1,0 +1,4 @@
+import {MessageCircle} from 'lucide-react';
+import {contact} from '../config/contact';
+import {Reveal,QuoteButton} from '../components/UI';
+export default function Contact(){return <section id="contacto" className="section container"><Reveal className="contact-card"><span className="eyebrow">TU PRÓXIMO PROYECTO EMPIEZA AQUÍ</span><h2>¿Tienes una idea?<br/>Nosotros la convertimos<br/><span>en realidad.</span></h2><p>Cuéntanos qué necesitas y recibe una propuesta personalizada.</p>{contact.whatsapp?<QuoteButton><MessageCircle size={19}/>Cotizar mi proyecto</QuoteButton>:<div className="contact-pending"><MessageCircle size={20}/><div><strong>Contacto disponible próximamente</strong><span>Estamos preparando nuestro canal de WhatsApp.</span></div></div>}<span className="contact-signature">DISEÑAMOS. DESARROLLAMOS. CONECTAMOS.</span></Reveal></section>;}

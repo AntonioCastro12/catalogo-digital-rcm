@@ -1,0 +1,94 @@
+/* Paleta inspirada en el logo original de RCM; imagen conservada sin alteraciones. */
+:root{--brand-navy:#03121f;--brand-cyan:#48dbe9;--brand-turquoise:#71efcf;--brand-violet:#a290f5;--accent:var(--brand-cyan);--muted:#a5bdca;--line:#67dce51c;--surface:#081e2b;background:var(--brand-navy);color:#e9fafb}
+body{background:var(--brand-navy)}
+::selection{background:#1b7381;color:#fff}
+:focus-visible{outline-color:var(--brand-turquoise)}
+header{background:#03121ff2}
+.brand-logo{width:52px;height:52px;object-fit:contain;border-radius:7px;flex-shrink:0}
+.logo small{color:#9ccdd3;letter-spacing:1.6px}
+.header-inner{padding-block:14px}
+.logo b{color:#b9f2ed}
+.navigation-tabs button{color:#b4cbd5}
+.navigation-tabs button[aria-selected=true]{background:#113844;border-color:#4edbe95c;color:#aaf7ef}
+.navigation-tabs button:hover{background:#12303d;color:#efffff}
+.mobile-current-tab{color:#8fe8df}
+.primary{background:linear-gradient(110deg,#49d4e4,#77e9ce);color:#03222c;border-color:#82f1e6;font-weight:700}
+.primary:hover{background:linear-gradient(110deg,#78e4ef,#a3f4dc);color:#03222c}
+.secondary,.icon-button{background:#102b3a;border-color:#62dbe32b}
+.secondary:hover,.button:hover{background:#154255}
+.button.primary:hover{background:linear-gradient(110deg,#78e4ef,#a3f4dc)}
+.header-quote{background:#123b48;color:#adf5eb;border-color:#64dfda3d}
+.hero{background:radial-gradient(ellipse at 73% 36%,#1f8b9a24,transparent 52%)}
+.hero h1 span{background-image:linear-gradient(105deg,#58dbed,#8bf0d6 68%,#aea1fa)}
+.hero-visual{background:radial-gradient(ellipse,#163b5033,transparent 70%)}
+.float-label{background:#0c2837e6;border-color:#72e4e93a}
+.float-label svg,.visual-bottom .accent{color:#70e7e5}
+.float-label small,.hero-note,.tech-strip,.hero-bottom>a{color:#a2bfca}
+.eyebrow{color:#8ed9de}
+.about-section,.business-section,.portfolio-section{background:#061a28}
+.values-grid strong{color:#85e8dd}
+.values-grid span{color:#a5bdca}
+.service-card{background:linear-gradient(135deg,#0b2433,#071923);border-color:#70d9e124}
+.service-card:hover{border-color:#60e0df70}
+.service-icon{background:#123945;color:#77e5e4;border-color:#76e9dd24}
+.card-category{color:#89d7df}
+.card-number{color:#8da7b8}
+.feature-preview li,.check-list li{color:#c0d4dd}
+.feature-preview svg,.check-list svg{color:#71dece}
+.text-button:hover{color:#a4f4e5}
+.filters button{background:#0b2533;color:#b9cdd7;border-color:#65dce524}
+.filters button:hover{background:#143b4b}
+.filters button.active{background:#15454f;color:#a5f4e9;border-color:#6fe6df65}
+.invitation-section{background:radial-gradient(ellipse at 78% 22%,#52508028,transparent 55%),#071b2a}
+.invitation-grid em{color:#b4f0e4}
+.event-tags span{border-color:#6ccfd92b;color:#bbd3de}
+.package-card{background:#0b2432;border-color:#78cddf2b}
+.package-card.featured{border-color:#66d9d7;background:linear-gradient(145deg,#123e46,#0b2434)}
+.package-badge{background:#74e6d2;color:#06313a;font-weight:700}
+.package-price,.packages-note{color:#a4e9e0}
+.guest-pass{background:#102b3b;border-color:#78d5e64a}
+.guest-pass>div>span,.guest-pass b{color:#a1eee0}
+.guest-pass small{color:#acc8d4}
+.nfc-experience,.code-panel{background:#071c2a;border-color:#66cfdd38}
+.nfc-demo-heading,.nfc-result>svg,.nfc-benefits svg{color:#7be6de}
+.nfc-scan{background:#12404b;border-color:#72e4df50;color:#9af2e5}
+.nfc-result>span,.nfc-benefits span{color:#b7cfd9}
+.digital-duo article,.business-grid article,.project-card{background:#0a2332;border-color:#7bd5df24}
+.business-grid article>svg{color:#7edfdc}
+.business-grid ul{color:#aecbd6}
+.code-panel-bar{color:#adcedb}
+.code-panel-bar>span:last-child{color:#84dbdf}
+.code-purple{color:#b9aafa}
+.code-green{color:#8ce5cc}
+.stack-grid{background:#061824}
+.stack-grid span{color:#abcdd8}
+.step-number{color:#83e3da;border-color:#65d5df45}
+.project-tech span{background:#153444;color:#b9dbe4}
+.contact-card{border-color:#5bdddb50;background:radial-gradient(ellipse at 50% 100%,#197d8440,transparent 72%),#082330}
+.contact-card h2 span{color:#83e9d7}
+.contact-pending{background:#143e48;border-color:#67e0d24d}
+.contact-pending svg{color:#8feada}
+.contact-pending span{color:#b1cdd5}
+.contact-signature{color:#9fc3ce}
+footer{background:#02101c}
+.footer-grid .logo{align-items:center}
+.footer-grid .brand-logo{width:122px;height:122px;border-radius:10px}
+.footer-services a,.footer-grid>div>a:not(.logo),.pending-link{color:#aec7d2}
+.footer-bottom{color:#96b3c1}
+.pending-link small{color:#91aebd}
+dialog{background:#092333;border-color:#56cdd57a;color:#edfaff}
+.skip-link{background:#41c5d3;color:#03222c}
+@media(max-width:850px){nav{background:#061c2b}.header-inner{padding-block:12px}.brand-logo{width:48px;height:48px}}
+@media(max-width:540px){.header-inner{gap:10px}.brand-logo{width:42px;height:42px}.logo{gap:8px;font-size:1rem}.logo small{font-size:.57rem;letter-spacing:1px}.mobile-current-tab{max-width:78px}.footer-grid .brand-logo{width:110px;height:110px}}
+/* Paquetes oficiales: seis niveles y alcances acumulativos. */
+.invitation-section .package-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 20px}
+.package-card .package-price{font-size:1.8rem;font-weight:700;color:var(--brand-turquoise);line-height:1.3;margin-top:16px}
+.package-card .package-recommendation{font-size:.875rem;line-height:1.6;margin:0 0 24px;color:var(--muted)}
+.package-recommendation strong{color:#ccece9;font-weight:600}
+.invitation-package-notes{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:44px;padding-top:34px;border-top:1px solid var(--line)}
+.invitation-package-notes h3{margin-bottom:16px}
+.invitation-package-notes p{font-size:1rem}
+.invitation-package-notes .check-list{margin:0}
+@media(max-width:1100px){.invitation-section .package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.invitation-package-notes{grid-template-columns:1fr;gap:28px}}
+@media(max-width:540px){.invitation-section .package-grid{grid-template-columns:1fr}}
