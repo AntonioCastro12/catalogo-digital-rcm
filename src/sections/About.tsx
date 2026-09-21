@@ -1,3 +1,52 @@
-import {motion,useReducedMotion} from 'framer-motion';
-import {Reveal} from '../components/UI';
-export default function About(){const reduced=useReducedMotion();return <section className="about-section"><div className="container about-grid"><Reveal><span className="eyebrow">TECNOLOGÍA CON PROPÓSITO</span><h2>Tu idea es el inicio.<br/><span className="muted">Nosotros construimos<br/>lo que sigue.</span></h2></Reveal><Reveal><p>En RCM CodeDev desarrollamos soluciones digitales para negocios, empresas, emprendedores y eventos.</p><p className="muted">Creamos experiencias digitales personalizadas combinando desarrollo de software, diseño, automatización y nuevas tecnologías.</p><div className="values-grid">{[['&lt;/&gt;','Proyectos digitales'],['A medida','Soluciones personalizadas'],['100%','Diseño adaptable'],['1 a 1','Atención personalizada']].map(([v,t],i)=><motion.div key={t} initial={reduced?false:{opacity:0,y:12}} whileInView={{opacity:1,y:0}} transition={{delay:i*.12}} viewport={{once:true}}><strong>{v==='&lt;/&gt;'?'</>':v}</strong><span>{t}</span></motion.div>)}</div></Reveal></div></section>;}
+import { motion, useReducedMotion } from "framer-motion";
+import { Reveal } from "../components/UI";
+export default function About() {
+  const reduced = useReducedMotion();
+  return (
+    <section className="about-section">
+      <div className="container about-grid">
+        <Reveal>
+          <span className="eyebrow">TECNOLOGÍA CON PROPÓSITO</span>
+          <h2>
+            Tu idea es el inicio.
+            <br />
+            <span className="muted">
+              Nosotros construimos
+              <br />
+              lo que sigue.
+            </span>
+          </h2>
+        </Reveal>
+        <Reveal>
+          <p>
+            En RCM CodeDev desarrollamos soluciones digitales para negocios,
+            empresas, emprendedores y eventos.
+          </p>
+          <p className="muted">
+            Creamos experiencias digitales personalizadas combinando desarrollo
+            de software, diseño, automatización y nuevas tecnologías.
+          </p>
+          <div className="values-grid">
+            {[
+              ["&lt;/&gt;", "Proyectos digitales"],
+              ["A medida", "Soluciones personalizadas"],
+              ["100%", "Diseño adaptable"],
+              ["1 a 1", "Atención personalizada"],
+            ].map(([v, t], i) => (
+              <motion.div
+                key={t}
+                initial={reduced ? false : { opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.12 }}
+                viewport={{ once: true }}
+              >
+                <strong>{v === "&lt;/&gt;" ? "</>" : v}</strong>
+                <span>{t}</span>
+              </motion.div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
