@@ -1,3 +1,4 @@
+import MediaCarousel from "./components/MediaCarousel";
 import { useEffect, useLayoutEffect, useState, type ReactNode } from "react";
 import { MotionConfig } from "framer-motion";
 import Header from "./components/Header";
@@ -74,6 +75,7 @@ export default function App() {
             tabIndex={0}
             hidden={activeTab !== id}
           >
+            {activeTab === id && (id === "servicios" || id === "invitaciones" || id === "nfc" || id === "desarrollo" || id === "proyectos") && <MediaCarousel key={id} tab={id} />}
             {panels[id]}
           </div>
         ))}

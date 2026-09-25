@@ -1,4 +1,5 @@
-import {useState} from 'react';
-import {ChevronLeft,ChevronRight,Heart,CalendarDays,MapPin} from 'lucide-react';
-const invitations=[{type:'NUESTRA BODA',name:'Sofía & Daniel',date:'24 · OCTUBRE · 2027',theme:'wedding'},{type:'MIS XV AÑOS',name:'Valentina',date:'16 · MAYO · 2027',theme:'quince'},{type:'MI BAUTIZO',name:'Mateo',date:'20 · JUNIO · 2027',theme:'baptism'}];
-export default function InvitationPreview(){const[index,setIndex]=useState(0);const item=invitations[index];return <div className="invitation-showcase"><div className={`invitation-demo ${item.theme}`} aria-live="polite"><span className="preview-badge">DISEÑO DE DEMOSTRACIÓN</span><Heart size={24}/><span className="invite-kind">{item.type}</span><h3>{item.name}</h3><p>Hay momentos que merecen<br/>compartirse contigo.</p><div className="invite-date">{item.date}</div><img src="/images/wedding.jpg" alt="Ramo de flores para una celebración" loading="lazy" width="600" height="400"/><div className="invite-details"><span><CalendarDays size={16}/> Una fecha inolvidable</span><span><MapPin size={16}/> Un lugar para celebrar</span></div></div><div className="carousel-controls"><button className="icon-button" aria-label="Invitación anterior" onClick={()=>setIndex((index+2)%3)}><ChevronLeft/></button><span>{index+1} / {invitations.length} · {item.type.toLowerCase()}</span><button className="icon-button" aria-label="Invitación siguiente" onClick={()=>setIndex((index+1)%3)}><ChevronRight/></button></div></div>;}
+export default function InvitationPreview() {
+  return <figure className="invitation-showcase" style={{ margin: 0 }}>
+    <img src="/media/foto-08.jpeg" alt="Invitación de boda de Fernanda y Daniel" loading="lazy" width="1080" height="1080" style={{ width: "100%", borderRadius: 18 }} />
+  </figure>;
+}

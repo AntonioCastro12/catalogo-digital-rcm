@@ -138,7 +138,7 @@ export default function Invitations() {
           </div>
         </Reveal>
         <a className="text-button packages-note" href="#proyectos">
-          Descubre nuestros conceptos de invitaciones <ArrowRight size={15} />
+          Ver nuestros proyectos <ArrowRight size={15} />
         </a>
       </div>
     </section>

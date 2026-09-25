@@ -1,63 +1,18 @@
-import { useState } from "react";
-import { Nfc, QrCode, ArrowRight, Images, Contact, Check } from "lucide-react";
+import { Images, Contact, Check } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { Reveal, QuoteButton } from "../components/UI";
 export default function NFC() {
-  const [album, setAlbum] = useState(false);
   return (
     <section id="nfc" className="section container">
       <div className="nfc-grid">
         <Reveal className="nfc-experience">
           <img
-            src="/images/devices.png"
-            alt="Llavero NFC junto a un smartphone y una laptop"
-            width="1672"
-            height="941"
+            src="/media/foto-09.jpeg"
+            alt="Tarjeta digital para odontólogos con código QR"
+            width="1024"
+            height="1024"
             loading="lazy"
           />
-          <div className="nfc-demo">
-            <div className="nfc-demo-heading">
-              <Nfc />
-              <span>Explora una conexión NFC</span>
-            </div>
-            <div className="nfc-flow">
-              <button
-                className="nfc-scan"
-                onClick={() => setAlbum(!album)}
-                aria-pressed={album}
-              >
-                <QrCode size={35} />
-                <span>{album ? "Ver tarjeta" : "Simular escaneo"}</span>
-              </button>
-              <ArrowRight className="accent" />
-              <div className="nfc-result" aria-live="polite">
-                {album ? (
-                  <>
-                    <Images size={23} />
-                    <strong>Nuestros recuerdos</strong>
-                    <img
-                      src="/images/wedding.jpg"
-                      loading="lazy"
-                      alt="Fotografía del álbum de ejemplo"
-                      width="160"
-                      height="70"
-                    />
-                    <span>Álbum digital · demostración</span>
-                  </>
-                ) : (
-                  <>
-                    <Contact size={25} />
-                    <strong>Tu tarjeta digital</strong>
-                    <span>
-                      Contacto, servicios y redes
-                      <br />
-                      en un solo lugar.
-                    </span>
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
         </Reveal>
         <Reveal>
           <span className="eyebrow">03 / DEL MUNDO FÍSICO AL DIGITAL</span>
@@ -139,16 +94,16 @@ export default function NFC() {
         <Reveal>
           <article className="qr-panel">
             <QRCodeSVG
-              value="https://example.com/rcm-demo"
+              value={new URL("#contacto", window.location.href).href}
               size={86}
               fgColor="#dfdbff"
               bgColor="#15151e"
-              title="QR de ejemplo, dirige a example.com"
+              title="Escanea para contactar a RCM CodeDev"
             />
             <div>
               <h3>Una puerta a tu mundo digital.</h3>
               <p>
-                Un enlace para menús, catálogos e información. QR ilustrativo.
+                Escanea este código para abrir nuestros datos de contacto.
               </p>
             </div>
           </article>
