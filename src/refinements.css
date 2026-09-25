@@ -1,0 +1,44 @@
+/* Shared spacing and surfaces for the catalog. */
+:root { --brand-navy:#07141d; --muted:#a2b7c2; --line:#b2dce218; }
+.container { width:min(1200px,calc(100% - 80px)); }
+.section { padding-block:76px; }
+header { background:#07141df5; }
+.header-inner { max-width:1440px; padding-inline:32px; gap:20px; }
+.navigation-tabs button { border-radius:8px; font-weight:500; }
+.navigation-tabs button[aria-selected="true"] { background:#15313c; border-color:#83ddd52e; color:#b9f4e8; }
+.button { border-radius:10px; font-weight:600; }
+.primary { background:#8de6d1; border-color:#8de6d1; }
+.about-section,.business-section,.portfolio-section { background:#0a1a25; }
+.service-card,.business-grid article,.project-card,.digital-duo article { background:#0d202c; border-color:#a7d1dc1c; border-radius:18px; box-shadow:none; }
+.service-card:hover { border-color:#8de6d155; box-shadow:0 12px 32px #0002; }
+.filters { gap:8px; flex-wrap:wrap; }
+.filters button { border-radius:30px; padding:10px 17px; }
+.section-heading-row { gap:24px; }
+.section-title { max-width:720px; }
+.package-card { border-radius:18px; }
+.nfc-experience>img { height:auto; max-height:580px; object-fit:contain; background:#061018; }
+.hero-grid { gap:64px; padding-bottom:24px; }
+.hero-visual { background:#0d202b; padding:12px; border:1px solid #b0dce21c; border-radius:24px; }
+.hero-visual img { width:100%; max-width:100%; height:auto; max-height:530px; margin:0; aspect-ratio:auto; object-fit:contain; mix-blend-mode:normal; border-radius:14px; }
+.hero-visual .visual-topline { padding:8px 6px 16px; color:#9bb8c4; letter-spacing:.08em; }
+.hero-visual .visual-bottom { margin:0; padding:16px 6px 6px; color:#abc3cc; }
+.hero-visual .float-label { display:none; }
+.hero h1 { letter-spacing:-.045em; }
+.hero { padding-top:134px; background:none; }
+.contact-card { border-radius:24px; }
+@media(max-width:1050px) { .header-inner { padding-inline:20px; gap:12px; } .hero-grid { gap:28px; } }
+@media(max-width:700px) {
+ .container { width:calc(100% - 36px); }
+ .section { padding-block:48px; }
+ .hero { padding-top:108px; }
+ .hero-grid { gap:32px; }
+ .hero h1 { font-size:2.6rem; }
+ .hero-copy>p { margin-block:20px 24px; }
+ .hero-visual img { max-height:440px; }
+ .hero-bottom { margin-top:20px; }
+ .nfc-grid { gap:32px; }
+ .section-heading-row { align-items:flex-start; }
+ .outline-label { white-space:normal; }
+ .service-card { padding:24px; }
+ .footer-grid .brand-logo { width:72px; height:72px; }
+}

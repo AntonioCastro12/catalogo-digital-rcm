@@ -42,6 +42,7 @@ button {
   color: inherit;
 }
 img {
+  height: auto;
   max-width: 100%;
   display: block;
 }
@@ -819,3 +820,4 @@ dialog::backdrop {
     transition: none !important;
   }
 }
+

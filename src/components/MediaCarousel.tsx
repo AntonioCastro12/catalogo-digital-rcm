@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Pause, Play, Volume2, VolumeX } from "lucide-react";
 import { galleryMedia, type GalleryTab } from "../data/gallery";
+import { QuoteButton } from "./UI";
 import "./MediaCarousel.css";
 
 const headings: Record<GalleryTab, [string, string]> = {
@@ -54,12 +55,36 @@ export default function MediaCarousel({ tab }: { tab: GalleryTab }) {
     return () => { cancelled = true; window.clearTimeout(timer); element?.pause(); };
   }, [active, index, item.kind, items.length, unavailable]);
 
+  const description = {
+    servicios: "Tarjetas, catálogos y herramientas para atender mejor a tus clientes.",
+    invitaciones: "Una invitación con los detalles de tu celebración, desde el primer mensaje hasta la confirmación.",
+    nfc: "Tu información, tus servicios y tus redes, al alcance de un escaneo.",
+    desarrollo: "Presenta tu negocio, recibe consultas y organiza tus citas desde tu propia web.",
+    proyectos: "Explora los diseños y encuentra una idea para tu negocio.",
+  }[tab];
+
   return <section ref={root} className="media-carousel container" aria-label="Galería de trabajos" aria-roledescription="carrusel">
     <div className="media-intro">
       <span className="eyebrow">{headings[tab][0]}</span>
       <h2>{headings[tab][1]}</h2>
-      <h3>{item.title}</h3>
-      <p className="media-category">{item.category}</p>
+      <p className="media-description">{description}</p>
+      <QuoteButton className="button primary media-quote" message={`Hola RCM CodeDev, me interesa ${item.title}.`}>Quiero algo así</QuoteButton>
+      <span className="media-collection">{String(items.length).padStart(2, "0")} muestras · RCM CodeDev</span>
+    </div>
+    <div className="media-showcase">
+    <div className="media-display" onTouchStart={event => { touch.current = event.touches[0].clientX; }} onTouchEnd={event => {
+      if (touch.current !== null) {
+        const distance = event.changedTouches[0].clientX - touch.current;
+        if (Math.abs(distance) > 50) next(distance < 0 ? 1 : -1);
+      }
+      touch.current = null;
+    }}>
+      {item.kind === "image" ? <img key={item.src} src={item.src} alt={item.title} decoding="async" onError={() => setUnavailable(true)} /> :
+        <video ref={video} key={item.src} src={item.src} poster={item.poster} autoPlay={active} muted={muted} playsInline preload="metadata"
+          onEnded={() => { if (active) next(1); }} onError={() => setUnavailable(true)} aria-label={item.title} />}
+    </div>
+    <div className="media-caption">
+      <div className="media-caption-copy"><p className="media-category">{item.category}</p><h3>{item.title}</h3></div>
       <div className="media-controls">
         <button type="button" aria-label="Anterior" onClick={() => next(-1)}><ChevronLeft size={20} /></button>
         <span aria-live={playing ? "off" : "polite"}>{index + 1} / {items.length}</span>
@@ -72,16 +97,6 @@ export default function MediaCarousel({ tab }: { tab: GalleryTab }) {
         </button>}
       </div>
     </div>
-    <div className="media-display" onTouchStart={event => { touch.current = event.touches[0].clientX; }} onTouchEnd={event => {
-      if (touch.current !== null) {
-        const distance = event.changedTouches[0].clientX - touch.current;
-        if (Math.abs(distance) > 50) next(distance < 0 ? 1 : -1);
-      }
-      touch.current = null;
-    }}>
-      {item.kind === "image" ? <img key={item.src} src={item.src} alt={item.title} decoding="async" onError={() => setUnavailable(true)} /> :
-        <video ref={video} key={item.src} src={item.src} poster={item.poster} autoPlay={active} muted={muted} playsInline preload="metadata"
-          onEnded={() => { if (active) next(1); }} onError={() => setUnavailable(true)} aria-label={item.title} />}
     </div>
   </section>;
 }

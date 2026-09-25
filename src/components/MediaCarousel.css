@@ -1,17 +1,35 @@
-.media-carousel { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(24px,5vw,72px); align-items:center; padding-block:45px; border-bottom:1px solid var(--line); }
-.media-intro { min-width:0; }
-.media-intro h2 { margin:14px 0; }
-.media-intro h3 { margin-top:28px; }
-.media-controls { display:flex; align-items:center; gap:12px; margin-top:20px; flex-wrap:wrap; }
-.media-controls button { display:inline-flex; align-items:center; justify-content:center; gap:7px; min-width:44px; padding:10px; }
-.media-controls button:disabled { opacity:.4; cursor:default; }
-.media-controls>span { font-variant-numeric:tabular-nums; min-width:48px; text-align:center; }
-.media-display { min-width:0; height:clamp(340px,65vh,620px); background:#06070b; border:1px solid var(--line); border-radius:18px; overflow:hidden; touch-action:pan-y; }
+.media-carousel { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(32px,6vw,84px); align-items:center; padding-block:48px 64px; }
+.media-intro { min-width:0; padding-block:24px; }
+.media-intro .eyebrow { font-size:.68rem; letter-spacing:.19em; margin-bottom:24px; }
+.media-intro .eyebrow::before { content:""; width:24px; height:2px; background:var(--accent); }
+.media-intro h2 { font-size:clamp(2.25rem,3.8vw,3.8rem); line-height:1.1; letter-spacing:-.045em; max-width:530px; text-wrap:balance; margin:0; }
+.media-description { max-width:380px; margin:24px 0 28px; font-size:1rem; line-height:1.75; }
+.media-collection { display:block; font-size:.72rem; letter-spacing:.04em; color:#829da9; margin-top:32px; }
+.media-showcase { min-width:0; padding:12px; border:1px solid #b0dce21c; border-radius:24px; background:#0d202b; box-shadow:0 24px 64px #0003; }
+.media-display { min-width:0; height:clamp(360px,62vh,590px); background:#060f16; border-radius:15px; overflow:hidden; touch-action:pan-y; }
 .media-display img,.media-display video { width:100%; height:100%; object-fit:contain; display:block; }
+.media-caption { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:18px 8px 6px; min-height:90px; }
+.media-caption-copy { min-width:0; }
+.media-caption h3 { font-size:.9rem; font-weight:600; line-height:1.45; letter-spacing:-.01em; }
+.media-category { color:#8ab3bb; font-size:.65rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:4px; line-height:1.4; }
+.media-controls { display:flex; align-items:center; gap:4px; flex-shrink:0; }
+.media-controls button { display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; padding:10px; border:1px solid transparent; background:transparent; border-radius:50%; color:#b9cfd7; transition:background .2s,color .2s; }
+.media-controls button:hover { background:#ffffff0d; color:#fff; }
+.media-controls button[aria-label="Pausar carrusel"],.media-controls button[aria-label="Reanudar carrusel"] { border-color:#ffffff18; }
+.media-controls>span { font-size:.72rem; font-variant-numeric:tabular-nums; min-width:40px; text-align:center; color:#9ab5c0; }
+@media(min-width:701px) and (max-width:1100px) { .media-carousel { gap:28px; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); } .media-caption { flex-wrap:wrap; gap:10px; } }
 @media(max-width:700px) {
- .media-carousel { grid-template-columns:1fr; gap:22px; padding-block:28px; }
- .media-intro h2 { font-size:1.8rem; }
- .media-intro h3 { margin-top:18px; }
- .media-display { height:auto; aspect-ratio:4/5; }
+ .media-carousel { grid-template-columns:1fr; gap:24px; padding-block:26px 36px; }
+ .media-intro { padding:0; }
+ .media-intro .eyebrow { margin-bottom:14px; font-size:.62rem; }
+ .media-intro h2 { font-size:clamp(1.9rem,7.5vw,2.65rem); max-width:500px; }
+ .media-description { margin:14px 0 0; font-size:.88rem; line-height:1.6; }
+ .media-quote { margin-top:18px; padding:10px 16px; min-height:44px; font-size:.8rem; }
+ .media-collection { display:none; }
+ .media-showcase { padding:7px; border-radius:18px; }
+ .media-display { height:auto; aspect-ratio:1/1.12; border-radius:12px; }
+ .media-caption { flex-direction:column; align-items:stretch; gap:12px; padding:14px 8px 8px; }
+ .media-caption h3 { font-size:.9rem; }
+ .media-controls { justify-content:center; border-top:1px solid #ffffff0d; padding-top:10px; }
 }
-.media-controls button { border:1px solid #ffffff24; background:var(--surface); border-radius:10px; min-height:44px; }
+@media(prefers-reduced-motion:reduce) { .media-controls button { transition:none; } }

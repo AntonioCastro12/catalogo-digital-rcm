@@ -31,7 +31,7 @@ Ocho pestañas: Inicio, Servicios, Invitaciones, Soluciones digitales, NFC / QR,
 | `src/config/contact.ts` | Número internacional de WhatsApp, solo dígitos, y mensaje general |
 | `src/config/social.ts` | Facebook, Instagram y correo oficiales |
 
-Los contactos permanecen vacíos por indicación del propietario. Hasta configurarlos, los botones de cotización llevan a la pestaña Contacto y muestran que el canal estará disponible próximamente. Nunca se usa un número inventado. Después de configurar WhatsApp, los enlaces abren `wa.me` con mensajes específicos por servicio o paquete.
+WhatsApp está configurado con el número 4621472372 de México (+52). Los botones de cotización abren `wa.me` con mensajes específicos por servicio o paquete. Los perfiles sociales pendientes se configuran en `src/config/social.ts`.
 
 Los códigos QR, invitaciones y ejemplos del portafolio son demostraciones. La simulación NFC es una interacción visual, no lectura de hardware ni validación real de invitados. Los servicios de software con servidor se anuncian en el catálogo, pero no se implementa backend en este proyecto.
 
@@ -63,4 +63,5 @@ Logo original proporcionado por el propietario en public/images/rcm-logo.jpg, co
 
 ## Paquetes oficiales de invitaciones
 Actualizados según Paquetes_Invitaciones_Digitales_RCM_Code_Dev_250_a_5000.pdf: Esencial 250 MXN, Clásica 500 MXN, Elegante 900 MXN, Premium 1500 MXN, Premium Plus 2500 MXN y VIP 5000 MXN. Los precios ya no están pendientes; los datos de contacto conservan su configuración actual. Se sigue la herencia descrita en el detalle de paquetes del PDF, que incluye WhatsApp desde Esencial. Las prestaciones de backend del catálogo describen los servicios ofrecidos: esta actualización no implementa base de datos, RSVP real ni validación de acceso.
+
 
